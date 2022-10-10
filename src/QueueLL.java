@@ -19,7 +19,7 @@ public class QueueLL<Type> {
 
     public Type deQueue(){
         Type firstObject = linkedList.get(0);
-        linkedList.remove(0);
+        linkedList.removeLast();
         return firstObject;
     }
 
