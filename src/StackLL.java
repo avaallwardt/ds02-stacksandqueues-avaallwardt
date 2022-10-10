@@ -1,6 +1,66 @@
-package com.company;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Stack;
 
-public class StackLL {
+public class StackLL<Type> {
+
+    private LinkedList<Type> linkedList;
+    public StackLL(){
+        linkedList = new LinkedList<Type>();
+    }
+
+    public Type push(Type item){
+        linkedList.add(item);
+        return item;
+    }
+
+    public Type pop(){
+        Type lastObject = linkedList.getLast();
+        linkedList.removeLast(); // i can use this method, right? bc we didnt code it in the 1st LL project
+        return lastObject;
+    }
+
+    public Type peek(){
+        return linkedList.getLast();
+    }
+
+    // stacks and queues -- can only add/remove objects -- can't iterate through so need to remove from og lnked list, put it all into a new linked list then put it back
+    public void display(){
+        LinkedList<Type> newLL = new LinkedList<Type>();
+        while(peek() != null){
+            // does this automatically print out the memory location for the data of the object?
+            System.out.println(newLL.add(linkedList.removeLast()));
+        }
+        // can i use getFirst here??? - does this follow the queue rules?
+        while(newLL.getFirst() != null){
+            linkedList.add(newLL.removeFirst());
+        }
+    }
+
+    public int size(){
+        LinkedList<Type> newLL = new LinkedList<Type>();
+        int numElements = 0;
+        while(peek() != null){
+            // does this automatically print out the memory location for the data of the object?
+            newLL.add(linkedList.removeLast());
+            numElements++;
+        }
+        // can i use getFirst here??? - does this follow the queue rules?
+        while(newLL.getFirst() != null){
+            linkedList.add(newLL.removeFirst());
+        }
+        return numElements;
+    }
+
+    public boolean isEmpty(){
+        if(peek() == null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
 
 
