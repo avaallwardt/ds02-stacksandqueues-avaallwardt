@@ -13,7 +13,7 @@ public class StackLL<Type> {
         linkedList.add(item);
         return item;
     }
-    //commit
+    //commit 2
     public Type pop(){
         Type lastObject = linkedList.getLast();
         linkedList.removeLast(); // i can use this method, right? bc we didnt code it in the 1st LL project
