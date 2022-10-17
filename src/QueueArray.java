@@ -1,6 +1,47 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
 
+public class QueueArray<Type> {
 
-public class QueueArray {
+    private ArrayList<Type> arrayList;
+
+    public QueueArray(){
+        arrayList = new ArrayList<Type>();
+    }
+    public Type enQueue(Type item){
+        arrayList.add(item);
+        return item;
+    }
+
+    public Type deQueue(){
+        Type firstItem = arrayList.get(0);
+        arrayList.remove(0);
+        return firstItem;
+    }
+
+    public Type peek(){
+        return arrayList.get(0);
+    }
+
+    public void display(){
+        for(int i = 0; i < arrayList.size(); i++){
+            System.out.println(arrayList.get(0));
+        }
+    }
+
+    public int size(){
+        return arrayList.size();
+    }
+
+    public boolean isEmpty(){
+        if(arrayList.size() == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
 
 

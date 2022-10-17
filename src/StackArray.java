@@ -1,5 +1,46 @@
+import java.util.ArrayList;
 
-public class StackArray {
+public class StackArray<Type> {
+
+    private ArrayList<Type> arrayList;
+
+    public StackArray(){
+        arrayList = new ArrayList<Type>();
+    }
+
+    public Type push(Type item){
+        arrayList.add(item);
+        return item;
+    }
+
+    public Type pop(){
+        Type lastItem = arrayList.get(arrayList.size() - 1);
+        arrayList.remove(arrayList.size() - 1);
+        return lastItem;
+    }
+
+    public Type peek(){
+        return arrayList.get(arrayList.size() - 1);
+    }
+
+    public void display(){
+        for(int i = arrayList.size() - 1; i > -1; i--){
+            System.out.println(arrayList.get(i));
+        }
+    }
+
+    public int size(){
+        return arrayList.size();
+    }
+
+    public boolean isEmpty(){
+        if(arrayList.size() == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
 }
 

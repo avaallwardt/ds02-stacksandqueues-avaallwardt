@@ -12,15 +12,15 @@ public class QueueLL<Type> {
         linkedList = new LinkedList<Type>();
     }
 
-    public Type enQueue(Type object) {
-        linkedList.add(object);
-        return object;
+    public Type enQueue(Type item) {
+        linkedList.add(item);
+        return item;
     }
 
     public Type deQueue(){
-        Type firstObject = linkedList.get(0);
-        linkedList.removeLast();
-        return firstObject;
+        Type firstItem = linkedList.getFirst();
+        linkedList.removeFirst();
+        return firstItem;
     }
 
     public Type peek(){
