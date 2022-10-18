@@ -30,20 +30,26 @@ public class QueueLL<Type> {
         return linkedList.getFirst();
     }
 
-    // can only remove/add objects to queues! need to update!
     public void display(){
+        for(int i = 0; i < linkedList.size(); i++){
+            System.out.println(linkedList.get(i));
+        }
+        /*
         LinkedList<Type> newLL = new LinkedList<Type>();
         while(peek() != null){
-            // does this automatically print out the memory location for the data of the object?
+            // does this automatically print out the memory location for the data of the object? -- yes it would do the node's data
             System.out.println(newLL.add(linkedList.removeFirst()));
         }
         // can i use getFirst here??? - does this follow the queue rules?
         while(newLL.getFirst() != null){
             linkedList.add(newLL.removeFirst());
         }
+         */
     }
 
     public int size(){
+        return linkedList.size();
+        /*
         int numElements = 0;
         LinkedList<Type> newLL = new LinkedList<Type>();
         while(peek() != null){
@@ -56,10 +62,12 @@ public class QueueLL<Type> {
             linkedList.add(newLL.removeFirst());
         }
         return numElements;
+
+         */
     }
 
     public boolean isEmpty(){
-        if(peek() == null){
+        if(linkedList.size() == 0){
             return true;
         }
         else{

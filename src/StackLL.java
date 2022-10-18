@@ -26,6 +26,10 @@ public class StackLL<Type> {
 
     // stacks and queues -- can only add/remove objects -- can't iterate through so need to remove from og lnked list, put it all into a new linked list then put it back
     public void display(){
+        for(int i = linkedList.size() - 1; i > -1; i--){
+            System.out.println(linkedList.get(i));
+        }
+        /*
         LinkedList<Type> newLL = new LinkedList<Type>();
         while(peek() != null){
             // does this automatically print out the memory location for the data of the object?
@@ -35,9 +39,13 @@ public class StackLL<Type> {
         while(newLL.getFirst() != null){
             linkedList.add(newLL.removeFirst());
         }
+
+         */
     }
 
     public int size(){
+        return linkedList.size();
+        /*
         LinkedList<Type> newLL = new LinkedList<Type>();
         int numElements = 0;
         while(peek() != null){
@@ -45,15 +53,16 @@ public class StackLL<Type> {
             newLL.add(linkedList.removeLast());
             numElements++;
         }
-        // can i use getFirst here??? - does this follow the queue rules?
         while(newLL.getFirst() != null){
             linkedList.add(newLL.removeFirst());
         }
         return numElements;
+
+         */
     }
 
     public boolean isEmpty(){
-        if(peek() == null){
+        if(linkedList.size() == 0){
             return true;
         }
         else{
